@@ -8,7 +8,7 @@ listaObject = []
 #Função que faz a leitura dos dados
 def buildObject():
     has_header = True
-    with open('./arquivosTeste/eventosTeste.csv', newline='', encoding="utf8") as csvfile:
+    with open('./arquivosTeste/eventos.csv', newline='', encoding="utf8") as csvfile:
         reader = csv.reader(csvfile, delimiter=';')
 
         #Se houver cabeçalho, ignora e passa para a próxima linha
@@ -169,7 +169,6 @@ for id in listaId:
 
                     #Decrementa o valor do fatumento do periodo promocional e recebe o faturamento total da maquininha
                     valorMaquininha = round((faturamentoParcial - (diferencaDias*preco)),2)
-                    #valorMaquininha += diferencaDias*obj.PRECO
                     valorMaquininha = round((valorMaquininha/30),2)
 
                 #Se o evento anterior foi uma ativação e sua data é anterior ao periodo promocional
